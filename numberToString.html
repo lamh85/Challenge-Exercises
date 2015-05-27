@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+</head>
+
+<script>
+
+  var stringInput;
+
+  var numberToString = function(number) {
+    stringInput = String(number);
+
+    arrayOnes = ["zero","one","two","three","four","five","six","seven","eight","nine"];
+    arrayTens = ["ten",null,"twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
+    arrayTeens = ["ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
+
+    // If the input only has 1 digit
+    if (stringInput.length == 1) {
+      // Index number equals the first digit of the input
+      stringOutput = arrayOnes[stringInput[0]];
+    // If the input has 2 digits
+    } else if (stringInput.length == 2) {
+      // If the first digit is a "1"
+      if (stringInput[0] == "1") {
+        stringOutput = arrayTeens[stringInput[1]]
+      } else {
+        stringOutput = arrayTens[stringInput[0]]
+        // If second digit is not zero, then concatenate
+        if (stringInput[1] != "0") {
+          stringOutput += "-" + arrayOnes[stringInput[1]];
+        }
+      }
+    }
+
+    console.log(stringOutput);
+  }
+
+</script>
+
+</html>
