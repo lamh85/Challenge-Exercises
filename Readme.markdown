@@ -21,6 +21,7 @@ First round you would remove the 2 and 4 ending up with: 1, 3, 5 and because the
 An anagram number is a number formed by rearranging the digits of another. For instance, 2134 is an anagram of 1234. Write a class called AnagramFinder that is initialized with a starting number and has a method called next_highest that returns the next highest number that is an anagram of the starting number. If a next highest anagram does not exist, return the starting number.
 
 > AnagramFinder.new(123).next_highest => 132
+
 > AnagramFinder.new(321).next_highest => 321 # no higher number exists
 
 # Convert Number to String
