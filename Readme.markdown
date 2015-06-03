@@ -29,3 +29,13 @@ An anagram number is a number formed by rearranging the digits of another. For i
 Create a function that converts a number written in digits into words.
 
 EG: "55" -> "fifty-five"
+
+# Find the missing number
+
+Imagine that you must produce an array of consecutive numbers that range from 1 to the length of the array. But your array is missing a number. Problem: Create a function that finds the missing number.
+
+For example:
+
+> An array of [1,2,4] is missing the number 3
+
+> An array of [1,2,3,4,5,7] is missing the number 6
