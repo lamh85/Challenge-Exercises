@@ -1,23 +1,24 @@
 puts "Give me a number"
 n = gets.chomp.to_i
 
-array_base = []
+array = []
 
 (1..n).each do |number|
-  array_base << number
+  array << number
 end
 
-# Make sure that the first number to delete is the second one.
+# Make sure that the first number to delete is the array's second element.
+# For easier comparison with the array length, the "counter" variable counts the array from 1 instead of 0.
 counter = 2
 
-while array_base.length > 1
-  while counter <= array_base.length
-    puts "The array is #{array_base}"
+while array.length > 1
+  while counter <= array.length
+    puts "The array is #{array}"
     puts "Now deleting the number at position #{counter}"
-    array_base.delete_at(counter-1)
+    array.delete_at(counter-1)
     counter += 1
   end
-  if counter == (array_base.length + 1)
+  if counter == (array.length + 1)
     puts "*** Now reverting the counter to 1"
     counter = 1
   else
@@ -26,7 +27,7 @@ while array_base.length > 1
   end
 end
 
-puts "The final number is #{array_base}"
+puts "The final number is #{array}"
 
 =begin
 
