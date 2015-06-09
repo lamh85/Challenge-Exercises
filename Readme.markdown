@@ -39,3 +39,7 @@ For example:
 > An array of [1,2,4] is missing the number 3
 
 > An array of [1,2,3,4,5,7] is missing the number 6
+
+# Compound Words
+
+Given two dictionaries -- one containing potentially compound words, and one containing words that are not compound -- check if a potentially compound word contains smaller words.
