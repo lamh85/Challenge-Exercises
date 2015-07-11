@@ -28,13 +28,14 @@ The application must work correctly on IE8+, Firefox 4+ and Chrome (latest).
         var array = [];
         var x;
         var y;
+        var stringedArray;
 
         // Function for does the actual recording
         var getPositions = function(event){
             event = event || window.event;
             x = Math.round(event.clientX);
             y = Math.round(event.clientY);
-        }
+        };
 
         // Bind event to the whole window.
         // The 3rd parameter is necessary for Firefox
@@ -43,10 +44,17 @@ The application must work correctly on IE8+, Firefox 4+ and Chrome (latest).
         // Push to array
         var repeatingFunction = function(){
             array.push({xPosition: x, yPosition: y});
-            document.getElementById('panel').innerHTML = JSON.stringify(array);
+
+            stringedArray = "";
+            for (i = 0; i < array.length; i++) {
+                stringedArray += "<br>Element " +(i+1)+ ": " +JSON.stringify(array[i]);
+            }
+
+            document.getElementById('panel').innerHTML = stringedArray;
+            // JSON.stringify(array);
         };
 
-        // Repeating pushign to array
+        // Repeating pushing to array
         setInterval(repeatingFunction,500);
 
     </script>
