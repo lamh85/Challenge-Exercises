@@ -36,8 +36,9 @@ The application must work correctly on IE8+, Firefox 4+ and Chrome (latest).
             y = Math.round(event.clientY);
         }
 
-        // Bind event to the whole window
-        window.addEventListener('mousemove', getPositions);
+        // Bind event to the whole window.
+        // The 3rd parameter is necessary for Firefox
+        window.addEventListener('mousemove', getPositions, false);
 
         // Push to array
         var repeatingFunction = function(){
