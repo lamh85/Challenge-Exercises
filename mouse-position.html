@@ -1,0 +1,53 @@
+<!-- 
+OBJECTIVE:
+
+Using pure JavaScript and no 3rd party libraries or toolkits, write a simple program to capture the mouse movements of the user on the page and store it in an array. Sampling should made every 500 milliseconds.
+
+The application must work correctly on IE8+, Firefox 4+ and Chrome (latest).
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+    Check out these variables in Javascript console:
+    <ul>
+        <li>x = x position</li>
+        <li>y = y position</li>
+        <li>array = the array of coordinates</li>
+    </ul>
+    <div id="panel"></div>
+
+    <script>
+
+        // Initialize the variables
+        var array = [];
+        var x;
+        var y;
+
+        // Function for does the actual recording
+        var getPositions = function(event){
+            event = event || window.event;
+            x=event.clientX;
+            y=event.clientY;
+        }
+
+        // Bind event to the whole window
+        window.addEventListener('mousemove', getPositions);
+
+        // Push to array
+        var repeatingFunction = function(){
+            array.push({xPosition: x, yPosition: y});
+            document.getElementById('panel').innerHTML = JSON.stringify(array);
+        };
+
+        // Repeating pushign to array
+        setInterval(repeatingFunction,500);
+
+        
+
+    </script>
+</body>
+</html>
