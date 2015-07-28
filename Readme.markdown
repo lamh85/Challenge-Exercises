@@ -43,3 +43,7 @@ For example:
 # Compound Words
 
 Given two dictionaries -- one containing potentially compound words, and one containing words that are not compound -- check if a potentially compound word contains smaller words.
+
+# CSV Analyzer
+
+A Ruby app that creates and analyze data from a CSV file.
