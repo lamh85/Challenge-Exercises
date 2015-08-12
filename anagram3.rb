@@ -8,26 +8,19 @@ puts "Give me a number!"
 @inventory = []
 @analyze_index = 0
 
-# Chop the tail digits for re-arrangement
+# Add more elements to the inventory
 def grow_inventory(tail_index)
   @inventory << @input.to_s[tail_index]
   @inventory = @inventory.sort.reverse
   @analyze_index = @input.to_s.length - @inventory.length
 end
 
-# Initialize @inventory
+# Initialize the inventory array
 grow_inventory(-1)
 grow_inventory(-2)
 @next_tail_index = -2 # Starting at -2 so that the function can decrement it to -3
 
-# Shoveling machine
-@results_array = []
-def transfer_number(number)
-  @results_array << number
-  @inventory.delete_at(@inventory.find_index(number))
-end
-
-# Successfully found a lower digit. Shovel that digit and then all the digits in descending order.
+# If there is an anagram, then create the number
 def write_answer(index)
   middle_digit = @inventory[index]
   @inventory.delete_at(index)
@@ -40,6 +33,7 @@ end
 def cycle_inventory
   has_result = false
   inventory_index = 0
+  # Cycle through inventory
   while (has_result == false && inventory_index < @inventory.length)
     if @inventory[inventory_index].to_i < @input.to_s[@analyze_index].to_i
       write_answer(inventory_index)
@@ -48,6 +42,7 @@ def cycle_inventory
       inventory_index = inventory_index + 1
     end
   end
+  # When finished cycling
   if (@inventory.length < @input.to_s.length) && (has_result == false)
     @next_tail_index = @next_tail_index - 1
     grow_inventory(@next_tail_index)
@@ -80,5 +75,14 @@ LOGIC:
 The next largest anagram is the anagram that preserves the most digits from the left.
 
 Therefore, the program should start analyzing from the tail end.
+
+EXPECTATIONS:
+
+A number whose digits stay the same or ascend does NOT have a next highest anagram:
+123
+111222333
+
+A number must have descending digits to produce the next highest anagram:
+12333222 -> 12332322
   
 =end

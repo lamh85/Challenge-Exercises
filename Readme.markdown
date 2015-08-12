@@ -16,7 +16,7 @@ Do the following:
 For instance. If n = 5 then you get an array [1,2,3,4,5]
 First round you would remove the 2 and 4 ending up with: 1, 3, 5 and because there is no element "6" you loop around and remove the 1 and then the 5. You are then left with number 3.
 
-# Anagram (work in progress)
+# Anagram (see anagram3.rb)
 
 An anagram number is a number formed by rearranging the digits of another. For instance, 2134 is an anagram of 1234. Write a class called AnagramFinder that is initialized with a starting number and has a method called next_highest that returns the next highest number that is an anagram of the starting number. If a next highest anagram does not exist, return the starting number.
 
