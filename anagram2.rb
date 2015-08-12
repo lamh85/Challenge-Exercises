@@ -8,7 +8,6 @@ input = gets.chomp
 
 puts "Your number is #{input}"
 
-anagram_created = false
 
 input_array = input.to_s.split("")
 
@@ -21,26 +20,29 @@ def transfer_number(number)
   @results_array.push(number)
   # Delete only ONE instance from @inventory
   @inventory.delete_at(@inventory.find_index(number))
-  puts "@results_array is #{@results_array}"
+  puts "Results is now #{@results_array}"
+  puts "Inventory is now #{@inventory}"
 end
 
+anagram_created = false
+
 input_array.length.times do |input_index|
-  if input_index == 0
-    transfer_number(input_array[input_index])
-  # Iterate through the @inventory
-  elsif @results_array[input_index] == nil
-    @inventory.each do |available_digit|
-      if anagram_created == true
-        # Transfer the largest digit from the @inventory
-        transfer_number(@inventory[0])
-      elsif (available_digit.to_i <= input_array[input_index].to_i)
-        transfer_number(input_array[input_index])
-        if input_array[input_index] != available_digit
-          anagram_created = true
-        end
-      end # If anagram_created == true
-    end # Iterate through @inventory
-  end # If input_index == 0
+  inventory_index = 0
+  # Keep looping until that digit is filled
+  while @results_array[input_index] == nil
+    if input_index == 0
+      transfer_number(input_array[input_index])
+    elsif anagram_created == true
+      transfer_number(@inventory[0])
+    elsif @inventory[inventory_index] < input_array[input_index]
+      transfer_number(@inventory[inventory_index])
+      anagram_created = true
+    elsif @inventory[inventory_index] == input_array[input_index]
+      transfer_number(@inventory[inventory_index])
+    else
+      inventory_index = inventory_index + 1
+    end
+  end
 end
 
 # puts @results_array
