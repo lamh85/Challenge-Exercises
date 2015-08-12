@@ -8,7 +8,6 @@ input = gets.chomp
 
 puts "Your number is #{input}"
 
-
 input_array = input.to_s.split("")
 
 # Sort from largest to smallest
