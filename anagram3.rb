@@ -57,32 +57,32 @@ cycle_inventory
 
 =begin
   
-EXAMPLES:
+  EXAMPLES:
 
-223445
-------
-223445 <-- can't swap the last 2 digits
-223445 <-- can't re-arrange the last 3 digits
-223445 <-- can't re-arrange the last 4 digits
-223445 <-- can't re-arrange all of the digits after the 1st
+  223445
+  ------
+  223445 <-- can't swap the last 2 digits
+  223445 <-- can't re-arrange the last 3 digits
+  223445 <-- can't re-arrange the last 4 digits
+  223445 <-- can't re-arrange all of the digits after the 1st
 
-54321
------
-54312 <-- Able to swap the last 2 digits
+  54321
+  -----
+  54312 <-- Able to swap the last 2 digits
 
-LOGIC:
+  LOGIC:
 
-The next largest anagram is the anagram that preserves the most digits from the left.
+  The next largest anagram is the anagram that preserves the most digits from the left.
 
-Therefore, the program should start analyzing from the tail end.
+  Therefore, the program should start analyzing from the tail end.
 
-EXPECTATIONS:
+  EXPECTATIONS:
 
-A number whose digits stay the same or ascend does NOT have a next highest anagram:
-123
-111222333
+  A number whose digits stay the same or ascend does NOT have a next highest anagram:
+  123
+  111222333
 
-A number must have descending digits to produce the next highest anagram:
-12333222 -> 12332322
+  A number must have descending digits to produce the next highest anagram:
+  12333222 -> 12332322
   
 =end
