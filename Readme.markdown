@@ -48,7 +48,7 @@ Given two dictionaries -- one containing potentially compound words, and one con
 
 A Ruby app that creates and analyze data from a CSV file.
 
-# Poker Card Encoder / Decoder
+# Poker Card Encoder / Decoder (under construction)
 
 You are going to write a simple function - decoder/encoder for poker cards (any card game in fact).
 Your task is to encode array of human readable symbols to array of codes or decode it doing this process with reversed way.
