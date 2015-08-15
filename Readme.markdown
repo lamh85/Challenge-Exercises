@@ -97,3 +97,19 @@ spade         s            3
 input: array of strings (symbols)/integers (codes) you must encode/decode
 output: array of integers (codes)/strings (symbols) sorted by code values ASC
 * if input is not defined or is not and array return null, if is empty array return empty array
+
+# Sorted List (under construction)
+
+The task here is to create a class that maintains a sorted list of numbers in ascending order.
+
+The class will have two methods:
+
+`add(x)` will add `x` to the list
+
+`get(i)` will get the `i`th value in the list
+
+You should also provide a `length` property that gives the length of the list.
+
+Efficiency matters!
+
+http://www.codewars.com/kata/53138a5dbb244a40680000a3
