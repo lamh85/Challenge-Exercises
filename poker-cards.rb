@@ -24,7 +24,12 @@ def decode
 end
 
 def encode
-  puts "I am encoding"
+  @input.each do |element|
+    number = element[0]
+    suit = element[1]
+    @results << @decode_suits.find_index(suit) * 13 + @decode_numbers.find_index(number)
+  end
+  puts "The encoded array is #{@results}"
 end
 
 def check_elements(correct_class)
@@ -33,12 +38,14 @@ def check_elements(correct_class)
       @is_invalid = true
       @validation_msg = "Error: at least one of the elements' format does not match the others'."
     end
-    if (correct_class == String) && ((element[0].to_i < 2 || element[0].to_i > 9) && (element[0].upcase != "A" || element[0].upcase != "T" || element[0].upcase != "J" || element[0].upcase != "Q" || element[0].upcase != "K"))
+    if !((correct_class == String) && (element[0].to_i >= 2 || element[0].to_i <= 9 || element[0].upcase == "A" || element[0].upcase == "T" || element[0].upcase == "J" || element[0].upcase == "Q" || element[0].upcase == "K"))
       @is_invalid = true
       @validation_msg = "This array element does not represent a card value (A to K): #{element}."
+      return @validation_msg
     elsif (correct_class == Fixnum) && (element < 0 || element > 51)
       @is_invalid = true
       @validation_msg = "This array element is not between 0 and 51 inclusive: #{element}."
+      return @validation_msg
     end
   end
 end
@@ -68,14 +75,16 @@ def make_array
   ["[", "]", " "].each do |replace_me|
     @input.gsub!(replace_me,"")
   end
+  puts "@input = #{@input}"
+  puts "@input = #{@input.class}"
   @input = @input.split(",")
   # If a string can stay the same after to_i.to_s, then it is a number
   if @input[0].to_i.to_s == @input[0]
     @input.each_with_index do |element,index|
       @input[index] = @input[index].to_i
     end
-  validate
   end
+  validate
 end
 
 make_array
