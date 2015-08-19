@@ -5,7 +5,7 @@ class List
   @array = []
 
   def self.all
-    puts "The list is now: #{@array}"
+    puts "The list is now: #{@array.sort}"
   end
 
   def self.length
