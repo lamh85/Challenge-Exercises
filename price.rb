@@ -24,7 +24,7 @@ def validated
 end
 
 def validate
-  if (/[1-9][0-9]*[\.0-9][0-9]*/.match(@input).class == MatchData)
+  if (!!Float(@input) rescue false) == true
     puts "checkpoint 1"
     validated
   else
