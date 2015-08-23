@@ -1,10 +1,5 @@
 @input = ""
 
-def get_input
-  puts "Give me a number!"
-  @input = gets.chomp
-end
-
 def validated
   input_array = @input.to_f.round(2).to_s.split(".")
 
@@ -29,11 +24,19 @@ def validated
 end
 
 def validate
-  # If @input can go through .to_f.to_s without becoming "0.0", then it is a legit float. Otherwise, the @input would have contained letters, which is an invalid @input.
-  if @input.to_s == @input.to_f.to_s
+  if (/[1-9][0-9]*[\.0-9][0-9]*/.match(@input).class == MatchData)
+    puts "checkpoint 1"
     validated
   else
-    puts "Your input contains letters. Please try again."
+    puts "One of the digits in your number is not a number. Please try again."
     get_input
   end
 end
+
+def get_input
+  puts "Give me a number!"
+  @input = gets.chomp
+  validate
+end
+
+get_input
