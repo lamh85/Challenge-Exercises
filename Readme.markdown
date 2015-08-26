@@ -114,7 +114,7 @@ Efficiency matters!
 
 http://www.codewars.com/kata/53138a5dbb244a40680000a3
 
-# Formatting a number as a price (under construction)
+# Formatting a number as a price
 
 Your objective is to add formatting to a plain number to display it as price.
 
