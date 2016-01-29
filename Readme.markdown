@@ -150,6 +150,15 @@ The kata tests are the same as the sample fixtures.
 
 Return an empty array if there are no matches.
 
-
-
 http://www.codewars.com/kata/52b305bec65ea40fe90007a7
+
+# Maze (under construction)
+
+Given a 2-dimensional array,
+[1, 0 ,1],
+[1, 1 ,1],
+[0, 0 ,1]
+
+Determine the path from top left to top right.
+
+Path can only go right or down.
