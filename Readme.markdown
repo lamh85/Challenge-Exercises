@@ -154,10 +154,12 @@ http://www.codewars.com/kata/52b305bec65ea40fe90007a7
 
 # Maze (under construction)
 
-Given a 2-dimensional array,
+Given a 2-dimensional array that represents a rectangular grid:
+```
 [1, 0 ,1],
 [1, 1 ,1],
 [0, 0 ,1]
+```
 
 Determine the path from top left to top right.
 
