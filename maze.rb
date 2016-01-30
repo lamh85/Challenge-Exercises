@@ -9,16 +9,11 @@ class Maze
     private
 
     def validate
-        is_valid = true
-        is_valid = false if @input.length < 2 # test length of outer dimension
-        if @input.class == Array
-            @input.each do |element| # test length of the deeper dimension
-                is_valid = false if element.length < 2
-            end
-        else
-            is_valid = false
-        end
-        return is_valid
+        return false if @input.length < 2 || @input.class != Array
+        @input.each_with_index do |element, index|
+            return false if element.length < 2
+        end if @input.class == Array
+        return true
     end
 end
 
