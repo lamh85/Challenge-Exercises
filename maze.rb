@@ -3,17 +3,29 @@ class Maze
 
     def initialize(input)
         @input = input
-        puts "You must enter a two-dimensional array, and each dimension must have at least 2 elements" if !validate
+        validate
     end
 
     private
 
     def validate
-        return false if @input.length < 2 || @input.class != Array
+        return get_input if @input.length < 2 || @input.class != Array
         @input.each_with_index do |element, index|
-            return false if element.length < 2
+            return get_input if element.length < 2
         end if @input.class == Array
-        return true
+        get_results
+    end
+
+    def get_input
+        @input = nil
+        puts "You must enter a two-dimensional array, and each dimension must have at least 2 elements."
+        puts "Please enter a two-dimensional array using this notation: [[1,2],[3,4]]."
+        @input = eval(gets)
+        validate
+    end
+
+    def get_results
+        puts "Beep beep. Working."
     end
 end
 
