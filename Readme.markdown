@@ -165,7 +165,7 @@ Determine the path from top left to top right.
 
 Path can only go right or down.
 
-# Longest Palindrome (under construction)
+# Longest Palindrome
 
 Find the length of the longest substring in the given string s that is the same in reverse.
 
