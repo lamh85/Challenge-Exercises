@@ -6,7 +6,7 @@ Here are the exercises:
 
 # Looping
 
-Given a number n. 
+Given a number n.
 
 Do the following:
 
@@ -175,8 +175,50 @@ If the length of the input string is 0, return value must be 0.
 
 Example:
 
-"a" -> 1 
-"aab" -> 2  
+"a" -> 1
+"aab" -> 2
 "abcde" -> 1
 "zzbaabcd" -> 4
 "" -> 0
+
+# Spreadsheet
+
+Find the correct values for the `nil`s:
+
+```
+{
+  cogs: {
+    jan: 100,
+    feb: 200,
+    mar: 300,
+  },
+  utilities: {
+    jan: 400,
+    feb: 500,
+    mar: 600
+  },
+  shipping: {
+    jan: 700,
+    feb: 800,
+    mar: 900
+  },
+  total: {
+    jan: nil,
+    feb: nil,
+    mar: nil
+  }
+}
+```
+
+
+# Narcissistic Number (under construction)
+
+A Narcissistic Number is a number which is the sum of its own digits, each raised to the power of the number of digits.
+
+For example, take 153 (3 digits):
+
+    1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
+
+and 1634 (4 digits):
+
+    1^4 + 6^4 + 3^4 + 4^4 = 1 + 1296 + 81 + 256 = 1634
