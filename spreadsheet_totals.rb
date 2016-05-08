@@ -21,6 +21,8 @@ hash = {
   }
 }
 
+shallow_keys = hash.keys
+
 hash.each do |key, value|
   hash[key].each do |deep_key, deep_value|
     puts deep_value
